@@ -28,4 +28,8 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 
 RUN npm -g install npm@3.x
 
+RUN apt-get install wget
+
+RUN wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
 ADD bamboo-capabilities.properties /root/bamboo-agent-home/bin/bamboo-capabilities.properties
