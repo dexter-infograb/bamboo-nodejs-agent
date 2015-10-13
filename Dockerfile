@@ -32,4 +32,9 @@ RUN apt-get install wget
 
 RUN wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
+RUN apt-get install -y python \
+  && curl -O https://bootstrap.pypa.io/get-pip.py \
+  && python get-pip.py \
+  && pip install awscli
+
 ADD bamboo-capabilities.properties /root/bamboo-agent-home/bin/bamboo-capabilities.properties
