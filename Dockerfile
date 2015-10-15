@@ -37,4 +37,9 @@ RUN apt-get install -y python \
   && python get-pip.py \
   && pip install awscli
 
+RUN wget https://storage.googleapis.com/golang/go1.5.1.linux-amd64.tar.gz \
+  && tar -C /usr/local -xzf go1.5.1.linux-amd64.tar.gz
+
+ENV PATH $PATH:/usr/local/go/bin
+
 ADD bamboo-capabilities.properties /root/bamboo-agent-home/bin/bamboo-capabilities.properties
